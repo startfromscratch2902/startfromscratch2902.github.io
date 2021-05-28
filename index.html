@@ -19,20 +19,17 @@
         $(document).ready(function (){
          if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
              window.location.href = 'https://apps.apple.com/us/app/matthews/id1501672218';
+            document.getElementById("demo").innerHTML = "android"; 
          }
          if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
              window.location.href = 'https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US';
+             document.getElementById("demo").innerHTML = "iphone"; 
+         }
+          if(navigator.userAgent.toLowerCase().indexOf("Mac") > -1){
+             window.location.href = 'https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US';
+            document.getElementById("demo").innerHTML = "Mac"; 
          }
         });
-        function showMessage() {
-          if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
-             window.location.href = 'https://apps.apple.com/us/app/matthews/id1501672218';
-          }
-          if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
-             window.location.href = 'https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US';
-           }
-        }
-document.getElementById("demo").innerHTML = window.showMessage(); 
 </script>
 </body>
 </html>
