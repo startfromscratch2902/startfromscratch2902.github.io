@@ -16,7 +16,9 @@
  
  <li><a href="javascript:goto('whatsapp://','whatsapp://');">whats app </a></li>
  
-
+ 
+ <li><a href="javascript:openScheme('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click to open  main>fallback = </a></li>
+ 
 </ul>
 
 <h2>Android</h2>
@@ -40,6 +42,12 @@ function goto(url, fallback) {
     script.setAttribute('src', url); 
 
     document.getElementsByTagName('head')[0].appendChild(script);
+}
+function openScheme(url,fallback) {
+  // body...
+window.location.replace(url); setTimeout(function () {
+
+window.location.replace(fallback); }, 2000);
 }
  </script>
 </body>
