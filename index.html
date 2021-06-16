@@ -2,13 +2,18 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
-  <link rel="javascript" href="logic.js">
+  <link rel="javascript" href="/logic.js">
   <meta charset="utf-8">
   <title></title>
 </head>
 <body>
 <h2>iOS</h2>
 <a href="javascript:goto('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click here boss </a>
+<a href="javascript:killme();"> kill me boss </a>
+<button ondblclick="killme()">
+      Show Alert Message
+    </button>
+
 <ul>
   <li><a href="googlechrome://tbbc.app">googlechrome://domain</a></li>
   <li><a href="safari-https://tbbc.app">safari-https://domain</a></li>
@@ -22,6 +27,24 @@
 <ul>
   <li>no demos, try the above links</li>
 </ul>
+ <script>
+
+function goto(url, fallback) {
+    var script = document.createElement('script'); 
+
+    script.onload = function() { 
+        alert(url);
+        document.location = url;
+    } 
+    script.onerror = function() { 
+        alert(fallback);
+        document.location = fallback;
+    } 
+    script.setAttribute('src', url); 
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+}
+ </script>
 </body>
 </html>
 
