@@ -16,8 +16,10 @@
  
  <li><a href="javascript:goto('whatsapp://','whatsapp://');">whats app </a></li>
  
- 
+
  <li><a href="javascript:openScheme('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click to open  main>fallback = </a></li>
+ 
+ <li><a href="javascript:ajx('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click to open  main>fallback = </a></li>
  
 </ul>
 
@@ -33,23 +35,39 @@ function goto(url, fallback) {
 
     script.onload = function() { 
         alert(url);
-        document.location = url;
+        window.location = url;
     } 
     script.onerror = function() { 
         alert(fallback);
-        document.location = fallback;
+        window.location = fallback;
     } 
     script.setAttribute('src', url); 
 
     document.getElementsByTagName('head')[0].appendChild(script);
 }
+
 function openScheme(url,fallback) {
   // body...
 window.location.replace(url); setTimeout(function () {
 
 window.location.replace(fallback); }, 2000);
 }
+function ajx(url,fallback) {
+
+    window.onload = function() { 
+        alert(url);
+        window.location = url;
+    } 
+    window.onerror = function() { 
+        alert(fallback);
+        window.location = fallback;
+    } 
+    script.setAttribute('src', url); 
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
  </script>
+}
 </body>
 </html>
 
