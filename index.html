@@ -19,7 +19,8 @@
 
  <li><a href="javascript:openScheme('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click to open  main>fallback = </a></li>
  
- <li><a href="javascript:ajx('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click to open  main>fallback = </a></li>
+ <li><a href="javascript:ajx('matthews://launch','https://apps.apple.com/ph/app/matthews/id1501672218');"> iOS </a></li>
+ <li><a href="javascript:ajx('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');"> Android </a></li>
  
 </ul>
 
@@ -54,16 +55,11 @@ window.location.replace(fallback); }, 2000);
 }
 function ajx(url,fallback) {
 
-    window.onload = function() { 
-        alert(url);
-        window.location = url;
-    } 
-    window.onerror = function() { 
-        alert(fallback);
-        window.location = fallback;
-    } 
-    script.setAttribute('src', url); 
-
+    try {
+      window.location.replace(url);
+    } catch {
+      window.location.replace(fallback);
+    }
     document.getElementsByTagName('head')[0].appendChild(script);
   }
  </script>
