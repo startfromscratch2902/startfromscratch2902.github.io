@@ -13,6 +13,7 @@
  
  <li><a href="javascript:opratingSystem();"> Test1 </a></li>
  <li><a href="javascript:opratingSystemTest();"> Test2 </a></li>
+ <li><a href="javascript:testing();"> Test3 ajax </a></li>
  
 </ul>
 
@@ -74,6 +75,37 @@ function ajx(url,fallback) {
         openScheme('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
       }
   }
+
+  function openSchemeTest(url,fallback) {
+    // body...
+      var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 2 && this.status == 200) {
+        window.location.replace(url);
+      } else {
+        window.location.replace(fallback);
+      }
+    };
+    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.send();
+  }
+
+  function testing() {
+      var ua = navigator.userAgent.toLowerCase();
+      var isAndroid = ua.indexOf("android") > -1; 
+      if(isAndroid) {
+        openSchemeTest('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
+      } else {
+        openSchemeTest('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
+      }
+  }
+
+  function openScheme(url,fallback) {
+  // body...
+    window.location.replace(url); setTimeout(function () {
+    window.location.replace(fallback); }, 2000);
+}
+
  </script>
 }
 </body>
