@@ -10,17 +10,9 @@
 <h2>iOS</h2>
 
 <ul>
- <li><a href="javascript:goto('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click to open  main>fallback = </a></li>
  
- <li><a href="javascript:goto('https://apps.apple.com/ph/app/matthews/id1501672218','whatsapp://');"> Click to open  main>fallback = </a></li>
- 
- <li><a href="javascript:goto('whatsapp://','whatsapp://');">whats app </a></li>
- 
-
- <li><a href="javascript:openScheme('whatsapp://','https://apps.apple.com/ph/app/matthews/id1501672218');"> Click to open  main>fallback = </a></li>
- 
- <li><a href="javascript:ajx('matthews://launch','https://apps.apple.com/ph/app/matthews/id1501672218');"> iOS </a></li>
- <li><a href="javascript:ajx('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');"> Android </a></li>
+ <li><a href="javascript:opratingSystem();"> Test1 </a></li>
+ <li><a href="javascript:opratingSystemTest();"> Test2 </a></li>
  
 </ul>
 
@@ -61,6 +53,26 @@ function ajx(url,fallback) {
       window.location.replace(fallback);
     }
     document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  function opratingSystem() {
+      var ua = navigator.userAgent.toLowerCase();
+      var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+      if(isAndroid) {
+        ajx('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
+      } else {
+        ajx('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
+      }
+  }
+
+  function opratingSystemTest() {
+      var ua = navigator.userAgent.toLowerCase();
+      var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+      if(isAndroid) {
+        openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
+      } else {
+        openScheme('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
+      }
   }
  </script>
 }
