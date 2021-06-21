@@ -80,13 +80,14 @@ function ajx(url,fallback) {
     // body...
       var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
+      alert("state" + this.readyState);
       if (this.readyState == 2 && this.status == 200) {
         window.location.replace(url);
       } else {
         window.location.replace(fallback);
       }
     };
-    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.open("GET", url, true);
     xhttp.send();
   }
 
