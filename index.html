@@ -80,7 +80,7 @@ function ajx(url,fallback) {
     // body...
       var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      alert("state" + this.readyState);
+      alert("state" + this.readyState + " status" + + this.status);
       if (this.readyState == 2 && this.status == 200) {
         window.location.replace(url);
       } else {
