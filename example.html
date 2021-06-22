@@ -1,44 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <script src="browser-deeplink.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onload = function() {
+                var isAndroid = ua.indexOf("android") > -1; 
+                var desktopFallback = "https://www.matthewsauto.com",
+                mobileFallback = isAndroid ? "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US" : "https://apps.apple.com/ph/app/matthews/id1501672218",
+                app = isAndroid ? "matthew://launch" : "matthews://";
 
-    deeplink.setup({
-        iOS: {
-            appId: "1501672218",
-            appName: "matthews",
-        },
-        android: {
-            appId: "com.matthew.rewards"
-        }
-    });
+                if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+                    window.location = app;
+                    window.setTimeout(function() {
+                        window.location = mobileFallback;
+                    }, 25);
+                } else {
+                    window.location = desktopFallback;
+                }
 
-    function clickHandler(uri) {
-        deeplink.open(uri);
-        return false;
-    }
+                function killPopup() {
+                    window.removeEventListener('pagehide', killPopup);
+                }
 
-    </script>
-    <style>
-    *, *:before, *:after {
-        box-sizing: border-box;
-    }
-    a {
-        font-family: monospace;
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-        padding: 25px;
-        background: #060;
-        color:#fff;
-        text-align: center;
-        font-size: 20px;
-    }
-    </style>
-</head>
-<body>
-    <a href="#" data-uri="matthews://open" onclick="clickHandler(this.dataset.uri)">open fb://profile</a>
-</body>
+                window.addEventListener('pagehide', killPopup);
+
+            };
+        </script>
+    </body>
 </html>
