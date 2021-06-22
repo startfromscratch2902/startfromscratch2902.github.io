@@ -9,25 +9,26 @@
             window.onload = function() {
 
                 var isAndroid = ua.indexOf("android") > -1; 
-                var desktopFallback = "https://www.matthewsauto.com",
-                mobileFallback = isAndroid ? "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US" : "https://apps.apple.com/ph/app/matthews/id1501672218",
-                app = isAndroid ? "matthew://launch" : "matthews://";
+                var desktopFallback = "https://www.matthewsauto.com";
+                var mobileFallback = isAndroid ? "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US" : "https://apps.apple.com/ph/app/matthews/id1501672218";
+                var app = isAndroid ? "matthew://launch" : "matthews://";
 
                 if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-                    window.location = app;
                     alert("hello" + " " + isAndroid + " deeplink " + app + " mobileFallback " : mobileFallback );
+                    window.location = app;
                     window.setTimeout(function() {
                         window.location = mobileFallback;
                     }, 25);
                 } else {
-                    window.location = desktopFallback;
                     alert("desktop fallback" );
+                    window.location = desktopFallback;
                 }
 
                 function killPopup() {
+                    alert("killPopup2" );
                     window.removeEventListener('pagehide', killPopup);
                 }
-
+                alert("killPopup1" );
                 window.addEventListener('pagehide', killPopup);
 
             };
