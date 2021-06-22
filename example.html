@@ -6,21 +6,19 @@
     </head>
     <body>
         <script type="text/javascript">
+            
+
             window.onload = function() {
-                alert("Hello");
-                var isAndroid = ua.indexOf("android") > -1; 
-                var desktopFallback = "https://www.matthewsauto.com";
-                var mobileFallback = isAndroid ? "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US" : "https://apps.apple.com/ph/app/matthews/id1501672218";
-                var app = isAndroid ? "matthew://launch" : "matthews://";
-                alert("Hello2");
+            var desktopFallback = "https://youtube.com/watch?v=4KnNVK-udTU",
+                mobileFallback = "https://youtube.com/watch?v=4KnNVK-udTU",
+                app = "vnd.youtube://4KnNVK-udTU";
+
                 if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-                    alert("hello" + " " + isAndroid + " deeplink " + app + " mobileFallback " : mobileFallback );
                     window.location = app;
                     window.setTimeout(function() {
                         window.location = mobileFallback;
                     }, 25);
                 } else {
-                    alert("desktop fallback" );
                     window.location = desktopFallback;
                 }
 
@@ -29,7 +27,24 @@
                 }
 
                 window.addEventListener('pagehide', killPopup);
+                
+            function getAppDeeplink() {
+            var app = "matthews://";
+            var isAndroid = ua.indexOf("android") > -1; 
+            if(isAndroid) {
+            app = "matthew://launch";
+            }
+             return app;
+            }
 
+            function getmobileFallback() {
+                var mobileFallback = "https://apps.apple.com/ph/app/matthews/id1501672218";
+                var isAndroid = ua.indexOf("android") > -1; 
+                if(isAndroid) {
+                    mobileFallback = "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US";
+                }
+                return mobileFallback;
+            }
             };
         </script>
     </body>
