@@ -7,7 +7,7 @@
     <body>
         <script type="text/javascript">
             window.onload = function() {
-                alert("hello");
+
                 var isAndroid = ua.indexOf("android") > -1; 
                 var desktopFallback = "https://www.matthewsauto.com",
                 mobileFallback = isAndroid ? "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US" : "https://apps.apple.com/ph/app/matthews/id1501672218",
@@ -15,11 +15,13 @@
 
                 if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
                     window.location = app;
+                    alert("hello" + " " + isAndroid + " deeplink " + app + " mobileFallback " : mobileFallback );
                     window.setTimeout(function() {
                         window.location = mobileFallback;
                     }, 25);
                 } else {
                     window.location = desktopFallback;
+                    alert("desktop fallback" );
                 }
 
                 function killPopup() {
