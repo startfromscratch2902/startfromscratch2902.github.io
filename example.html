@@ -9,11 +9,11 @@
             window.onload = function() {
 
                 var isAndroid = ua.indexOf("android") > -1; 
-                alert(isAndroid ? "matthew://launch" : "matthews://");
+                var app = isAndroid ? "matthew://launch" : "matthews://";
+                alert(app);
 
                 var desktopFallback = "https://www.matthewsauto.com";
                 var mobileFallback = isAndroid ? "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US" : "https://apps.apple.com/ph/app/matthews/id1501672218";
-                var app = isAndroid ? "matthew://launch" : "matthews://";
 
                 if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
                     alert("hello" + " " + isAndroid + " deeplink " + app + " mobileFallback " : mobileFallback );
