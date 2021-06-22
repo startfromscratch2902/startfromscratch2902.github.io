@@ -9,6 +9,8 @@
             window.onload = function() {
 
                 var isAndroid = ua.indexOf("android") > -1; 
+                alert(isAndroid ? "matthew://launch" : "matthews://");
+
                 var desktopFallback = "https://www.matthewsauto.com";
                 var mobileFallback = isAndroid ? "https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US" : "https://apps.apple.com/ph/app/matthews/id1501672218";
                 var app = isAndroid ? "matthew://launch" : "matthews://";
