@@ -57,9 +57,11 @@ window.location.replace(fallback); }, 2000);
 function ajx(url,fallback) {
 
     try {
-      window.location.replace(url);
+      setTimeout(function () {window.location.replace(url); }, 100);
+      // window.location.replace(url);
     } catch {
-      window.location.replace(fallback);
+      setTimeout(function () {window.location.replace(fallback); }, 500);
+      // window.location.replace(fallback);
     }
     document.getElementsByTagName('head')[0].appendChild(script);
   }
