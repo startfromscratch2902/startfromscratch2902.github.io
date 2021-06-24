@@ -23,7 +23,15 @@
   <li>no demos, try the above links</li>
 </ul>
  <script>
-
+window.onload = function() {
+  var ua = navigator.userAgent.toLowerCase();
+  var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+  if(isAndroid) {
+    openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
+  } else {
+    openScheme('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
+  }
+}
 function goto(url, fallback) {
     var script = document.createElement('script'); 
 
