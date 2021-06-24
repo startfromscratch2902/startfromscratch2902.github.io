@@ -16,10 +16,10 @@
                     app = getAppDeeplink();
                     //alert(desktopFallback + " " + mobileFallback + " " + app );
                     if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-                        window.location = app;
+                        window.open(app);
                         window.setTimeout(function() {
                             window.location = mobileFallback;
-                        }, 100);
+                        }, 1000);
                     } else {
                         window.location = desktopFallback;
                     }
