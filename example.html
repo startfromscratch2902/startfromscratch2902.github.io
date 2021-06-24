@@ -18,12 +18,11 @@
                     if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
                         window.location = app;
                         window.setTimeout(function() {
-                            window.open(mobileFallback);
+                            window.location = mobileFallback;
                         }, 1000);
                     } else {
                         window.location = desktopFallback;
                     }
-
                     function killPopup() {
                         window.removeEventListener('pagehide', killPopup);
                     } 
