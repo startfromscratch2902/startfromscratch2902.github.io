@@ -17,10 +17,10 @@
                     //alert(desktopFallback + " " + mobileFallback + " " + app );
                     if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
                         if(isAndroid) {
-                            window.location.replace(url);
-                        } else {
-                            // window.location = app;
+                            // window.location.replace(url);
                             document.getElementById("l").src = app;
+                        } else {
+                            window.location = app;
                         }
                         window.setTimeout(function() {
                             window.location = mobileFallback;
