@@ -80,7 +80,9 @@ function ajx(url,fallback) {
       var ua = navigator.userAgent.toLowerCase();
       var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
       if(isAndroid) {
-        openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
+        openScheme('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end','intent://#Intent;scheme=matthew;package=com.matthew.rewards;end')
+        
+        // openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
       } else {
         openScheme('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
       }
