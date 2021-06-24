@@ -16,7 +16,11 @@
                     app = getAppDeeplink();
                     //alert(desktopFallback + " " + mobileFallback + " " + app );
                     if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-                        window.location = app;
+                        if(isAndroid) {
+                            window.location.replace(url);
+                        } else {
+                            window.location = app;
+                        }
                         window.setTimeout(function() {
                             window.location = mobileFallback;
                         }, 1000);
