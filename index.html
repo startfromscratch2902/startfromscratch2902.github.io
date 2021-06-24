@@ -7,7 +7,7 @@
   <title></title>
 </head>
 <body onload="javascript:opratingSystemTest();">
-<a href="intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;S.browser_fallback_url=https://www.matthewsauto.com;end" id="clickTarget">***</a>
+<a href="intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end" id="clickTarget">chk</a>
  <script>
 // window.onload = function() {
 //   var ua = navigator.userAgent.toLowerCase();
@@ -66,11 +66,11 @@ function ajx(url,fallback) {
       var ua = navigator.userAgent.toLowerCase();
       var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
       if(isAndroid) {
-        var clickTarget = document.getElementById("clickTarget");
-      var fakeMouseEvent = document.createEvent('MouseEvents');
-      fakeMouseEvent.initMouseEvent("click", true, true, window,
-        0, 0, 0, 20, 10, false, false, false, false, 0, null);
-      clickTarget.dispatchEvent(fakeMouseEvent);
+      //   var clickTarget = document.getElementById("clickTarget");
+      // var fakeMouseEvent = document.createEvent('MouseEvents');
+      // fakeMouseEvent.initMouseEvent("click", true, true, window,
+      //   0, 0, 0, 20, 10, false, false, false, false, 0, null);
+      // clickTarget.dispatchEvent(fakeMouseEvent);
         // openScheme('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end','intent://#Intent;scheme=matthew;package=com.matthew.rewards;end')
 
         // openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
