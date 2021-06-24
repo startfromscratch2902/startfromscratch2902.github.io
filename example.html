@@ -16,15 +16,14 @@
                     app = getAppDeeplink();
                     //alert(desktopFallback + " " + mobileFallback + " " + app );
                     if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-                        if(isAndroid) {
-                            // window.location.replace(url);
-                            document.getElementById("l").src = app;
-                        } else {
-                            window.location = app;
-                        }
                         window.setTimeout(function() {
                             window.location = mobileFallback;
                         }, 1000);
+                        if(isAndroid) {
+                            window.location.replace(url);
+                        } else {
+                            window.location = app;
+                        }
                     } else {
                         window.location = desktopFallback;
                     }
@@ -50,6 +49,5 @@
                 }
             };
         </script>
-        <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
     </body>
 </html>
