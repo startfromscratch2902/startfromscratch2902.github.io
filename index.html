@@ -7,21 +7,7 @@
   <title></title>
 </head>
 <body onload="javascript:opratingSystemTest();">
-<h2>iOS</h2>
-
-<ul>
- 
- <li><a href="javascript:opratingSystem();"> Test1 </a></li>
- <li><a href="javascript:opratingSystemTest();"> Test2 </a></li>
- <li><a href="javascript:testing();"> Test3 ajax </a></li>
- 
-</ul>
-
-<h2>Android</h2>
-
-<ul>
-  <li>no demos, try the above links</li>
-</ul>
+<a href="'intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;S.browser_fallback_url=https://www.matthewsauto.com;end'" id="clickTarget">***</a>
  <script>
 // window.onload = function() {
 //   var ua = navigator.userAgent.toLowerCase();
@@ -80,8 +66,13 @@ function ajx(url,fallback) {
       var ua = navigator.userAgent.toLowerCase();
       var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
       if(isAndroid) {
-        openScheme('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end','intent://#Intent;scheme=matthew;package=com.matthew.rewards;end')
-        
+        var clickTarget = document.getElementById("clickTarget");
+      var fakeMouseEvent = document.createEvent('MouseEvents');
+      fakeMouseEvent.initMouseEvent("click", true, true, window,
+        0, 0, 0, 20, 10, false, false, false, false, 0, null);
+      clickTarget.dispatchEvent(fakeMouseEvent);
+        // openScheme('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end','intent://#Intent;scheme=matthew;package=com.matthew.rewards;end')
+
         // openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
       } else {
         openScheme('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
