@@ -16,9 +16,9 @@
                     app = getAppDeeplink();
                     //alert(desktopFallback + " " + mobileFallback + " " + app );
                     if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-                        window.open(app);
+                        window.location = app;
                         window.setTimeout(function() {
-                            window.location = mobileFallback;
+                            window.open(mobileFallback);
                         }, 1000);
                     } else {
                         window.location = desktopFallback;
