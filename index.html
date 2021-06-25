@@ -6,12 +6,15 @@
   <meta charset="utf-8">
   <title></title>
 </head>
-<body onload="javascript:opratingSystemTest();">
+<body >
 <!-- <a href="intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end" id="clickTarget">click</a> -->
  <!-- <a href="javascript:alert('hello');" id="clickTarget">chk</a> -->
  <a href="javascript:void(0);" onclick="window.location.replace('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end')" id="clickTarget">new link!</a>
 
  <script>
+  window.onload = function(){
+    alert("window loaded");
+  }
 // window.onload = function() {
 //   var ua = navigator.userAgent.toLowerCase();
 //       var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
@@ -111,7 +114,9 @@ function ajx(url,fallback) {
     window.location.replace(url); setTimeout(function () {
     window.location.replace(fallback); }, 2000);
 }
-
+document.addEventListener('DOMContentLoaded', function() {
+   opratingSystemTest()
+}, false);
  </script>
 }
 </body>
