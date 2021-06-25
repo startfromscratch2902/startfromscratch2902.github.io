@@ -7,38 +7,8 @@
   <title></title>
 </head>
 <body >
-<!-- <a href="intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end" id="clickTarget">click</a> -->
- <!-- <a href="javascript:alert('hello');" id="clickTarget">chk</a> -->
- <a href="javascript:void(0);" onclick="window.location.replace('intent://matthew.com/#Intent;scheme=matthew;package=com.matthew.rewards;end')" id="clickTarget">new link!</a>
-
+<a href="javascript:opratingSystemTest()" id="clickTarget">new link!</a>
  <script>
-  window.onload = function(){
-    alert("window loaded");
-  }
-// window.onload = function() {
-//   var ua = navigator.userAgent.toLowerCase();
-//       var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-//       if(isAndroid) {
-//         ajx('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
-//       } else {
-//         ajx('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
-//       }
-// }
-function goto(url, fallback) {
-    var script = document.createElement('script'); 
-
-    script.onload = function() { 
-        alert(url);
-        window.location = url;
-    } 
-    script.onerror = function() { 
-        alert(fallback);
-        window.location = fallback;
-    } 
-    script.setAttribute('src', url); 
-
-    document.getElementsByTagName('head')[0].appendChild(script);
-}
 
 function openScheme(url,fallback) {
   // body...
@@ -46,77 +16,22 @@ window.location.replace(url); setTimeout(function () {
 
 window.location.replace(fallback); }, 2000);
 }
-function ajx(url,fallback) {
-
-    try {
-      // setTimeout(function () {window.location.replace(url); }, 100);
-      window.location.replace(url);
-    } catch {
-      // setTimeout(function () {window.location.replace(fallback); }, 500);
-      window.location.replace(fallback);
-    }
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
-
-  function opratingSystem() {
-      var ua = navigator.userAgent.toLowerCase();
-      var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-      if(isAndroid) {
-        ajx('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
-      } else {
-        ajx('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
-      }
-  }
 
   function opratingSystemTest() {
       var ua = navigator.userAgent.toLowerCase();
       var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
       if(isAndroid) {
-      //   var clickTarget = document.getElementById("clickTarget");
-      // var fakeMouseEvent = document.createEvent('MouseEvents');
-      // fakeMouseEvent.initMouseEvent("click", true, true, window,
-      //   0, 0, 0, 20, 10, false, false, false, false, 0, null);
-      // clickTarget.dispatchEvent(fakeMouseEvent);
-        openScheme('intent://matthew.com/#Intent;scheme=matthew;package=com.matthew.rewards;end','intent://matthew.com/#Intent;scheme=matthew;package=com.matthew.rewards;end') 
-        // openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
+        openScheme('intent://#Intent;scheme=matthew;package=com.matthew.rewards;end','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US') 
       } else {
         openScheme('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
       }
   }
 
-  function openSchemeTest(url,fallback) {
-    // body...
-      var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      alert("state" + this.readyState + " status" + + this.status);
-      if (this.status == 200) {
-        window.location.replace(url);
-      } else {
-        window.location.replace(fallback);
-      }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
-  }
-
-  function testing() {
-      var ua = navigator.userAgent.toLowerCase();
-      var isAndroid = ua.indexOf("android") > -1; 
-      if(isAndroid) {
-        openSchemeTest('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
-      } else {
-        openSchemeTest('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
-      }
-  }
-
   function openScheme(url,fallback) {
-  // body...
-    window.location.replace(url); setTimeout(function () {
-    window.location.replace(fallback); }, 2000);
+    setTimeout(function () {
+    window.location.replace(fallback); }, 3000);
+    window.location.replace(url); 
 }
-document.addEventListener('DOMContentLoaded', function() {
-   opratingSystemTest()
-}, false);
  </script>
 }
 </body>
