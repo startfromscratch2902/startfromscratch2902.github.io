@@ -17,10 +17,8 @@
 
 <script>
 function openScheme(url,fallback) {
-var isAndroid = ua.indexOf("android") > -1;
-var seconds = isAndroid ? 1000 : 4000; 
 setTimeout(function () {
-window.location.replace(fallback); }, seconds);
+window.location.replace(fallback); }, 2500);
 window.location.replace(url); 
 }
 
