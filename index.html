@@ -18,7 +18,7 @@
 <script>
 function openScheme(url,fallback) {
 setTimeout(function () {
-window.location.replace(fallback); }, 3000);
+window.location.replace(fallback); }, 1000);
 window.location.replace(url); 
 }
 
@@ -32,15 +32,6 @@ function openDeepLink() {
   }
 }
 
-function ajx(url,fallback) {
-
-    try {
-      window.location.replace(url);
-    } catch {
-      window.location.replace(fallback);
-    }
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
