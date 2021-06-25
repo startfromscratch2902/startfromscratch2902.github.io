@@ -17,8 +17,9 @@
 
 <script>
 function openScheme(url,fallback) {
-window.location.replace(url); setTimeout(function () {
+setTimeout(function () {
 window.location.replace(fallback); }, 3000);
+window.location.replace(url); 
 }
 
 function openDeepLink() {
