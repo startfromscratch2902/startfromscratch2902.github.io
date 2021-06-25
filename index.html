@@ -42,9 +42,9 @@ function goto(url, fallback) {
 
 function openScheme(url,fallback) {
   // body...
-window.location.replace(url); setTimeout(function () {
+window.open(url); setTimeout(function () {
 
-window.location.replace(fallback); }, 2000);
+window.open(fallback); }, 2000);
 }
 function ajx(url,fallback) {
 
@@ -77,8 +77,9 @@ function ajx(url,fallback) {
       // fakeMouseEvent.initMouseEvent("click", true, true, window,
       //   0, 0, 0, 20, 10, false, false, false, false, 0, null);
       // clickTarget.dispatchEvent(fakeMouseEvent);
-        openScheme('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end','intent://#Intent;scheme=matthew;package=com.matthew.rewards;end') 
+        openScheme('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US') 
         // openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US');
+        // window.open('intent://#Intent;scheme=matthew://launch;package=com.matthew.rewards;end')
       } else {
         openScheme('matthews://','https://apps.apple.com/ph/app/matthews/id1501672218')
       }
