@@ -10,12 +10,17 @@
 
 <title>App Downloader</title>
 </head>
-<body>
+<body onload="javascript:automate()">
 <div class="d-flex justify-content-center" align-items='center'>
 <button type="button" class="btn btn-success" onclick="javascript:openDeepLink()">Open/Download App</button>  
 </div>
 
 <script>
+
+function automate() {
+  setTimeout(function () {
+ openDeepLink()}, 800);
+}
 function openScheme(url,fallback) {
 setTimeout(function () {
 window.location.replace(fallback); }, 2500);
