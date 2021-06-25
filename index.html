@@ -17,14 +17,16 @@
 
 <script>
 function openScheme(url,fallback) {
+var isAndroid = ua.indexOf("android") > -1;
+var seconds = isAndroid ? 1000 : 4000; 
 setTimeout(function () {
-window.location.replace(fallback); }, 1000);
+window.location.replace(fallback); }, seconds);
 window.location.replace(url); 
 }
 
 function openDeepLink() {
   var ua = navigator.userAgent.toLowerCase();
-  var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+  var isAndroid = ua.indexOf("android") > -1; 
   if(isAndroid) {
     openScheme('matthew://launch','https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US') 
   } else {
