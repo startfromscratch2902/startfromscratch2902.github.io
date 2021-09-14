@@ -18,7 +18,11 @@
  </div> 
 
 <script>
-    
+    function openScheme(url,fallback) {
+    setTimeout(function () {
+    window.location.replace(fallback); }, 2500);
+    window.location.replace(url); 
+    }
 function openDeepLink() {
   var ua = navigator.userAgent.toLowerCase();
   var isAndroid = ua.indexOf("android") > -1; 
