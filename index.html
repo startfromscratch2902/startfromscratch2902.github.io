@@ -20,7 +20,13 @@
     function openDeepLink() {
         window.location.href = 'https://staging.autorewardsplus.com/products/1293823'; 
         setTimeout(function () {
-        window.location.href = 'https://apps.apple.com/ph/app/matthews/id1501672218';
+            var ua = navigator.userAgent.toLowerCase();
+            var isAndroid = ua.indexOf("android") > -1; 
+            if(isAndroid) {
+               window.location.href = 'https://play.google.com/store/apps/details?id=com.matthew.rewards&hl=en_IN&gl=US'
+            } else {
+               window.location.href = 'https://apps.apple.com/ph/app/matthews/id1501672218';    
+            }
         }, 1000);
     }
  </script>
