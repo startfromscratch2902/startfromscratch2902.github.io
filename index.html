@@ -14,17 +14,20 @@
 <body onload = "openDeepLink()">
  <div>
   <!-- <button type="button" class="btn btn-success" onclick="javascript:openDeepLink()">Open/Download App</button>  -->
-  <p align="center"> This will hit automatically on load ;)</p>
+  <p align="center" id="abc"> This will hit automatically on load ;)</p>
  </div> 
 
  <script>
       function openDeepLink() {
          var ua = navigator.userAgent.toLowerCase();
          var isAndroid = ua.indexOf("android") > -1; 
+         var isiPhone = ua.indexOf("iphone") > -1; 
          if(isAndroid) {
             window.location.href = 'https://staging.autorewardsplus.com/'
-         } else {
+         } else if(isiPhone){
             window.location.href = 'https://staging.autorewardsplus.com/products/1293823';    
+         } else {
+            window.location.href = 'https://staging.autorewardsplus.com';    
          }
 
          setTimeout(function () { 
