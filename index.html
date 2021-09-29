@@ -24,12 +24,10 @@
          var isiPhone = ua.indexOf("iphone") > -1;
          console.log('user Agent',ua);
          if(isAndroid) {
-            window.location.href = 'https://staging.autorewardsplus.com/xyz'
-         } else if(isiPhone){
-            window.location.href = 'https://staging.autorewardsplus.com/products/1293823';    
+            window.location.href = 'https://staging.autorewardsplus.com/products/app-store'
          } else {
-            window.location.href = 'https://staging.autorewardsplus.com';    
-         }
+            window.location.href = 'https://staging.autorewardsplus.com/products/app-store';    
+         } 
 
          setTimeout(function () { 
             if(isAndroid) {
